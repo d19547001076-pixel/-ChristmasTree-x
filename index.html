@@ -435,8 +435,8 @@
             new THREE.Vector3(0.2, 0.8, 0), new THREE.Vector3(0.4, 0.5, 0)
         ]);
         this.geoCane = new THREE.TubeGeometry(path, 20, 0.15, 8, false);
-        this.geoFrame = new THREE.BoxGeometry(1.4, 1.4, 0.1);
-        this.geoPhotoPlane = new THREE.PlaneGeometry(1.2, 1.2);
+        this.geoFrame = new THREE.BoxGeometry(1.4, 1.8, 0.1);
+        this.geoPhotoPlane = new THREE.PlaneGeometry(1.2, 2.0);
 
         // Initialize Systems (保持原样)
         this.initDust();
@@ -662,7 +662,7 @@
                             y = Math.sin(angle * 2) * 8; 
                             
                             p.targetPos.set(x, y, z);
-                            p.targetScale.setScalar(2.5); 
+                            p.targetScale.setScalar(4.0); 
                             p.mesh.lookAt(0, y, 0); 
                             p.mesh.rotateY(Math.PI); 
 
@@ -933,3 +933,4 @@
 </body>
 
 </html>
+
