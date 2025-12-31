@@ -727,7 +727,7 @@
                 this.particles = new ParticleSystem(this.scene);
                 
                 this.setupUI();
-                this.setupInputs();
+                //this.setupInputs();
 
                 this.clock = new THREE.Clock();
                 this.animate = this.animate.bind(this);
@@ -801,22 +801,7 @@
                 });
             }
 
-            setupInputs() {
-                const input = document.getElementById('file-input');
-                input.addEventListener('change', (e) => {
-                    const f = e.target.files[0];
-                    if(!f) return;
-                    
-                    const reader = new FileReader();
-                    reader.onload = (ev) => {
-                        new THREE.TextureLoader().load(ev.target.result, (t) => {
-                            t.colorSpace = THREE.SRGBColorSpace;
-                            this.particles.addNewPhoto(t);
-                        });
-                    }
-                    reader.readAsDataURL(f);
-                });
-            }
+          
 
             switchMode(newMode) {
                 if (STATE.mode === newMode && newMode !== 'FOCUS') return;
@@ -933,6 +918,7 @@
 </body>
 
 </html>
+
 
 
 
